@@ -11,8 +11,6 @@ COPY package*.json ./
 # Install deps inside container
 RUN npm install
 
-RUN npm i --save @nestjs/typeorm typeorm
-
 #  Bundle App Sources
 COPY . .
 

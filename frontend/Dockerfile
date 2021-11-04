@@ -2,12 +2,12 @@
 # Stage 1: build
 FROM node:14 AS development
 
-WORKDIR /thomas/frontend/src/app
+WORKDIR /abraham/frontend/src/app
 
 COPY package*.json ./
 
 RUN npm install
-RUN npm install -g @angular/cli@12.2.0
+RUN npm install -g @angular/cli
 
 COPY . .
 
