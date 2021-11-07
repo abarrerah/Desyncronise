@@ -1,29 +1,31 @@
-.container{
-    display: flex;
-    justify-self: center;
-    margin: 100px;
-    min-width: 350px;
-    .login {
-        margin-bottom: 20px;
-    }
-    mat-card {
-        mat-card-content {
-            form {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 100px;
+  min-width: 350px;
 
-                mat-form-field {
-                    width: 100%;
-                    min-width: 300px;
-                }
-                
-                .button{
-                    display: flex;
-                    justify-content: flex-end;
-                }
-            }
-            
+  .login {
+    margin-bottom: 20px;
+  }
+
+  mat-card {
+    mat-card-content {
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        mat-form-field {
+          width: 100%;
+          min-width: 300px;
         }
+
+        .button {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
     }
+  }
+
 }

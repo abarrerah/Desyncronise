@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs/operators';
 import { UserService } from '../../services/user-service/user.service';
@@ -13,18 +13,18 @@ import { CustomValidators } from '../../_helpers/custom-validators';
 export class RegisterComponent {
 
   form: FormGroup = new FormGroup({
-    email: new FormControl(null,[Validators.required, Validators.email]),
-    username: new FormControl(null,[Validators.required]),
-    password: new FormControl(null,[Validators.required]),
-    passwordConfirm: new FormControl(null,[Validators.required])
+    email: new FormControl(null, [Validators.required, Validators.email]),
+    username: new FormControl(null, [Validators.required]),
+    password: new FormControl(null, [Validators.required]),
+    passwordConfirm: new FormControl(null, [Validators.required])
   },
-  { validators: CustomValidators.passwordsMatching }
+    { validators: CustomValidators.passwordsMatching }
   );
 
-  constructor(private userService:UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   register() {
-    if(this.form.valid) {
+    if (this.form.valid) {
       this.userService.create({
         email: this.email.value,
         password: this.password.value,
@@ -38,13 +38,13 @@ export class RegisterComponent {
   get email(): FormControl {
     return this.form.get('email') as FormControl;
   }
-  
-  get password(): FormControl {
-    return this.form.get('password') as FormControl;
-  }
-  
+
   get username(): FormControl {
     return this.form.get('username') as FormControl;
+  }
+
+  get password(): FormControl {
+    return this.form.get('password') as FormControl;
   }
 
   get passwordConfirm(): FormControl {

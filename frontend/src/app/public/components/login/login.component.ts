@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs/operators';
 import { AuthService } from '../../services/auth-service/auth.service';
-import { CustomValidators } from '../../_helpers/custom-validators';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,14 +12,14 @@ import { CustomValidators } from '../../_helpers/custom-validators';
 export class LoginComponent {
 
   form: FormGroup = new FormGroup({
-    email: new FormControl(null,[Validators.required, Validators.email]),
-    password: new FormControl(null,[Validators.required]),
+    email: new FormControl(null, [Validators.required, Validators.email]),
+    password: new FormControl(null, [Validators.required])
   });
 
   constructor(private authService: AuthService, private router: Router) { }
 
   login() {
-    if(this.form.valid) {
+    if (this.form.valid) {
       this.authService.login({
         email: this.email.value,
         password: this.password.value
@@ -36,6 +36,5 @@ export class LoginComponent {
   get password(): FormControl {
     return this.form.get('password') as FormControl;
   }
-
 
 }

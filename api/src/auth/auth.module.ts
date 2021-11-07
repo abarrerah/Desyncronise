@@ -5,7 +5,6 @@ import { JwtAuthGuard } from './guards/jwt.guard';
 import { AuthService } from './service/auth.service';
 import { JwtStrategy } from './strategies/jwt.strategy';
 
-
 @Module({
   imports: [
     JwtModule.registerAsync({
